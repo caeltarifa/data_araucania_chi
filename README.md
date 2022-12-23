@@ -30,7 +30,7 @@ In a perfect world, data is clean, structured, and all in one place. That’s ev
 *   [How to Convert NumPy Array to Pandas DataFrame](https://datatofish.com/numpy-array-to-pandas-dataframe/)
 *   [Data wrangling with Pandas](https://exeter-data-analytics.github.io/python-data/pandas.html)
 
-> Xldr
+> Xlrd
 *   [[Chapter 4] Data Wrangling with Python by Jacqueline Kazil, Katharine Jarmul](https://demo.mobilepit.com/pub/book/DataScience/Data%20Wrangling%20with%20Python.pdf)
 *   [Scraping Excel Data with Python](https://medium.com/@tanyashapiro_72192/scraping-excel-data-with-python-41725308d9b0)
 
