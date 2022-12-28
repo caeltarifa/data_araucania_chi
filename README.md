@@ -25,7 +25,7 @@ xlrd==1.2.0
 ```
 
 ### 3.2.   Main class or how to instance "wrangling procceses"
-Reading Excel files by FileReader Class where it requires a forles with those needed files.
+Reading Excel files by FileReader Class where it requires files' folder to be processed.
 ```
 files = FileReader('/content/data_income')
 files.collect_files()
@@ -58,14 +58,14 @@ files.show_files()
 For each file, the access and analysis over sheet content, structure and design have been into account to specify the work zone as a dataframe.
 ```
 for url_file in files.list_files:
-  print( url_file)
   array_xl = Array_xl(url_file, '/content/data_outcome_ine_cl')
 
   array_xl.data_wrangling()
   array_xl.data_normalization()
   array_xl.default_dataframe_csv()
   #array_xl.custom_dataframe_csv(1)
-  print(array_xl.xl_array.shape)
+  
+  array_xl.xl_array.shape
 ```
 
 ![sectorizindata](https://user-images.githubusercontent.com/23003922/209239062-f6882cbe-eb26-462e-bcfb-4e5e76f524d6.png)
