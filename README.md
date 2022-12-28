@@ -6,14 +6,74 @@ Data wrangling, routing, transformation, and system mediation logic.
 2. Giving format to xlxs files' tables to json for each file and book that it is inside on it.
 3. The data is turned into sql format after json data structure has done in order to load with diagram by itself (i.e. automaticlly).
 
-## NiFi processors
+## 1.   NiFi processors
 ![nifi design](https://user-images.githubusercontent.com/23003922/207765016-ad4aa477-5516-47cc-985b-c1bdf757f6a9.png)
 
 
-## Wranling data from Excel files
+## 2.   Wranling data from Excel files
 In a perfect world, data is clean, structured, and all in one place. That’s every analyst’s dream! But much like most things in life, data is messy and unpredictable.
 
+## 3.   Abstraction and encapsulation: Estatistic National Institute of Chili (INE)
+Within INE's data bank, several documents with different format is storaged. This library comprises the process of cleaning and unifying raw, messy and complex data sets for easy access and analysis for Biosoft aproaches. In below is shown the usage.
+
+### 3.1.   Requirements
+```
+polars==0.15.8
+numpy==1.21.6
+pandas==1.3.5
+xlrd==1.2.0
+```
+
+### 3.2.   Main class or how to instance "wrangling procceses"
+Reading Excel files by FileReader Class where it requires a forles with those needed files.
+```
+files = FileReader('/content/data_income')
+files.collect_files()
+files.show_files()
+```
+
+```
+1    /content/data_income/numero-upa-practicas-mejoramiento-suelo.xlsx
+2    /content/data_income/numero-productores-tramos-edad.xlsx
+3    /content/data_income/existencias-colmenas.xlsx
+4    /content/data_income/numero-upa-orientación-colmenas.xlsx
+5    /content/data_income/01_numero_superficie_de_upa_censadas_regional-xlsx.xlsx
+6    /content/data_income/numero-superficie-de-upa-forestal-regional-comunal.xlsx
+7    /content/data_income/numero-de-upa-y-superficie-por-categoría-de-uso-del-suelo.xlsx
+8    /content/data_income/numero-productores-pueblos-originarios.xlsx
+9    /content/data_income/numero-persona-natural-tipo-tenencia.xlsx
+10    /content/data_income/tamaño-upa-región-comuna.xlsx
+11    /content/data_income/actividad-principal-región.xlsx
+12    /content/data_income/numero-superficie-de-upa-frutales-regional-comunal.xlsx
+13    /content/data_income/numero-superficie-de-upa-aire-libre-bajo-cubierta-regional-comunal.xlsx
+14    /content/data_income/numero-personas-administradoras.xlsx
+15    /content/data_income/superficie-principal-sistema-riego.xlsx
+16    /content/data_income/superficie-categoría-cultivo-región-comuna.xlsx
+17    /content/data_income/trabajo-agrícola.xlsx
+18    /content/data_income/existencias-animales.xlsx
+19    /content/data_income/numero-superficie-de-upa-riego-secano-regional-comunal.xlsx
+20    /content/data_income/tipo-gestión-región-comuna.xlsx
+21    /content/data_income/numero-superficie-de-upa-bosque-nativo-regional-comunal.xlsx
+```
+For each file, the access and analysis over sheet content, structure and design have been into account to specify the work zone as a dataframe.
+```
+for url_file in files.list_files:
+  print( url_file)
+  array_xl = Array_xl(url_file, '/content/data_outcome_ine_cl')
+
+  array_xl.data_wrangling()
+  array_xl.data_normalization()
+  array_xl.default_dataframe_csv()
+  #array_xl.custom_dataframe_csv(1)
+  print(array_xl.xl_array.shape)
+```
+
 ![sectorizindata](https://user-images.githubusercontent.com/23003922/209239062-f6882cbe-eb26-462e-bcfb-4e5e76f524d6.png)
+
+
+![Dataframe](https://user-images.githubusercontent.com/23003922/209751585-2294c36d-4216-49a6-9b60-954cf56e3816.png)
+
+
 
 
 ## References
