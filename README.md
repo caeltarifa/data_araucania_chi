@@ -24,7 +24,7 @@ In a perfect world, data is clean, structured, and all in one place. That’s ev
     <p>
  Within INE's data bank, several documents with different format is storaged. This library comprises the process of cleaning and unifying raw, messy             and complex data sets for easy access and analysis for Biosoft aproaches. In below is shown the usage.
 
- This way was built using [Xldr Jupyter notebook](https://github.com/caeltarifa/process_distributed_data/blob/main/DW0___data_wrangling_with_XLDR.ipynb).
+ This way was built using [Xldr Jupyter notebook](https://github.com/caeltarifa/process_distributed_data/blob/main/DW0___data_wrangling_with_XLDR.ipynb) or also [OOP paradigm in files](https://github.com/caeltarifa/process_distributed_data/tree/main/py_wrangling_ine_cl).
 
  - **Requirements**
       ```python
