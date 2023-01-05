@@ -10,6 +10,12 @@ Data wrangling, routing, transformation, and system mediation logic.
 ## 1.   Wrangling data from Excel files: 
 In a perfect world, data is clean, structured, and all in one place. That’s every analyst’s dream! But much like most things in life, data is messy and unpredictable.
 
+   > "... *it has been stated that up to 80% of data analysis is spent on the process of
+cleaning and preparing data. However, being a prerequisite to the rest of the data
+analysis workflow (visualization, modeling, reporting), it’s essential that you become
+fluent and efficient in data wrangling techniques.*" — _**Page v, Data Wrangling with R, 2016**_
+
+
    ### Case: [Instituto Nacional de Estadistica - Chile (INE)](https://www.ine.gob.cl/estadisticas)
  
   Several files withim INE's site to be handled are messy, no align to easily read, and they do not have a structuring header for storing them. In this section,  we, by seeking the right method, explored different ways to read, transform, and load all data withim Excel files. The most optimal, regarding time of execution and memory output, would be choosen. By the way, below is presented, an example of the INE's excel file, requirements of Python's libraries, and data Pipeline comprised in three paths.
