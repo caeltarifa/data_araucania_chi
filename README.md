@@ -12,7 +12,7 @@ In a perfect world, data is clean, structured, and all in one place. That’s ev
 
    ### Case: [Instituto Nacional de Estadistica - Chile (INE)](https://www.ine.gob.cl/estadisticas)
  
-  Several files withim INE's site to be handled are messy, no align to easily read, and they do not have structured a header for storing them. In this section,  we, by seeking the right method, explored different ways to read, transform, and load all data withim Excel files. The most optimal, regarding time of execution and memory output, would be choosen. By the way, below is presented, an example of the INE's excel file, requirements of Python's libraries, and data Pipeline comprised in three paths.
+  Several files withim INE's site to be handled are messy, no align to easily read, and they do not have a structuring header for storing them. In this section,  we, by seeking the right method, explored different ways to read, transform, and load all data withim Excel files. The most optimal, regarding time of execution and memory output, would be choosen. By the way, below is presented, an example of the INE's excel file, requirements of Python's libraries, and data Pipeline comprised in three paths.
     
   | **Frame of data:** Messy data and unreadeable fields as headers for database |
   |:------------:|
