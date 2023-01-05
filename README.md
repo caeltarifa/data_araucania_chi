@@ -22,94 +22,97 @@ In a perfect world, data is clean, structured, and all in one place. That’s ev
   <details>
     <summary><h3>By Xldr (retrieves data from Excel files)</h3></summary>
     <p>
-    Within INE's data bank, several documents with different format is storaged. This library comprises the process of cleaning and unifying raw, messy             and complex data sets for easy access and analysis for Biosoft aproaches. In below is shown the usage.
+ Within INE's data bank, several documents with different format is storaged. This library comprises the process of cleaning and unifying raw, messy             and complex data sets for easy access and analysis for Biosoft aproaches. In below is shown the usage.
 
-    This way was built using [Jupyter notebook](https://github.com/caeltarifa/process_distributed_data/blob/main/DW0___data_wrangling_with_XLDR.ipynb).
+ This way was built using [Xldr Jupyter notebook](https://github.com/caeltarifa/process_distributed_data/blob/main/DW0___data_wrangling_with_XLDR.ipynb).
 
-    - **Requirements**
+ - **Requirements**
       ```python
       polars==0.15.8
       numpy==1.21.6
       xlrd==1.2.0
       ```
-    - **Datapipeline**
-    Main class or how to instance "wrangling procceses".
-    Reading Excel files by FileReader Class where it requires files' folder to be processed.
+ - **Datapipeline**
+ Main class or how to instance "wrangling procceses".
+ Reading Excel files by FileReader Class where it requires files' folder to be processed.
 
-      - [x] `files = FileReader('/content/data_income')`
-      - [x] `files.collect_files()`
-      - [x] `files.show_files()`
+   - [x] `files = FileReader('/content/data_income')`
+   - [x] `files.collect_files()`
+   - [x] `files.show_files()`
 
-        ```python
-        1    /content/data_income/numero-upa-practicas-mejoramiento-suelo.xlsx
-        2    /content/data_income/numero-productores-tramos-edad.xlsx
-        3    /content/data_income/existencias-colmenas.xlsx
-        .
-        ```
-      For each file, the access and analysis over sheet content, structure and design have been into account to specify the work zone as a dataframe.
-      `for url_file in files.list_files:`
+     ```python
+     1    /content/data_income/numero-upa-practicas-mejoramiento-suelo.xlsx
+     2    /content/data_income/numero-productores-tramos-edad.xlsx
+     3    /content/data_income/existencias-colmenas.xlsx
+     .
+     ```
+   For each file, the access and analysis over sheet content, structure and design have been into account to specify the work zone as a dataframe.
+   `for url_file in files.list_files:`
 
-      - [x] `array_xl = Array_xl(url_file, '/content/data_outcome_ine_cl')`
-      - [x] `array_xl.data_wrangling()`
-      - [x] `array_xl.data_normalization()`
-      - [x] `array_xl.default_dataframe_csv()` or `array_xl.custom_dataframe_csv(1)`
+   - [x] `array_xl = Array_xl(url_file, '/content/data_outcome_ine_cl')`
+   - [x] `array_xl.data_wrangling()`
+   - [x] `array_xl.data_normalization()`
+   - [x] `array_xl.default_dataframe_csv()` or `array_xl.custom_dataframe_csv(1)`
 
-     - **Outcome** [CSV dataset](https://github.com/caeltarifa/process_distributed_data/tree/main/dataset_censo_agropecuario/outcome/xldr_numpy)
+  - **Outcome** [CSV dataset](https://github.com/caeltarifa/process_distributed_data/tree/main/dataset_censo_agropecuario/outcome/xldr_numpy)
 
-        |  Dataframe on defining range action|
-        |:-------------------------:|
-        |  ![Dataframe](https://user-images.githubusercontent.com/23003922/209751585-2294c36d-4216-49a6-9b60-954cf56e3816.png)|
+     |  Dataframe on defining range action|
+     |:-------------------------:|
+     |  ![Dataframe](https://user-images.githubusercontent.com/23003922/209751585-2294c36d-4216-49a6-9b60-954cf56e3816.png)|
 
     </p>
 
   </details>
   
-  
-<details>
-  <summary><h3> By PySpark (Parallel computing) </h3></summary>
-  <p>
-    This solution was built using [Jupyter notebook](https://github.com/caeltarifa/process_distributed_data/blob/main/DW1___data_wrangling_with_Parallel_processing_PySpark.ipynb).
+ 
+ 
+ 
+   <details>
+    <summary><h3>By PySpark (Parallel computing)</h3></summary>
+    <p>
+ 
+This way was built using [PySpark Jupyter notebook](https://github.com/caeltarifa/process_distributed_data/blob/main/DW1___data_wrangling_with_Parallel_processing_PySpark.ipynb).
 
-  - **Requirements**
+- **Requirements**
     ```python
     pandas==1.3.5
     numpy==1.21.6
     pyspar==3.3.1
     ```
-  - **Datapipeline**
-  Main class or how to instance "wrangling procceses".
-  Reading Excel files by FileReader Class where it requires files' folder to be processed.
+- **Datapipeline**
+Main class or how to instance "wrangling procceses".
+Reading Excel files by FileReader Class where it requires files' folder to be processed.
 
-    - [x] `files = FileReader('/content/data_income')`
-    - [x] `files.collect_files()`
-    - [x] `files.show_files()`
+ - [x] `folder = FileReader('/content/data_income')`
+ - [x] `folder.collect_files()`
+ - [x] `folder.show_files()`
 
-      ```python
-      1    /content/data_income/numero-upa-practicas-mejoramiento-suelo.xlsx
-      2    /content/data_income/numero-productores-tramos-edad.xlsx
-      3    /content/data_income/existencias-colmenas.xlsx
-      .
-      ```
-    For each file, the access and analysis over sheet content, structure and design have been into account to specify the work zone as a dataframe.
-    `for xl_file in folder.list_f`
+   ```python
+   1    /content/data_income/numero-upa-practicas-mejoramiento-suelo.xlsx
+   2    /content/data_income/numero-productores-tramos-edad.xlsx
+   3    /content/data_income/existencias-colmenas.xlsx
+   .
+   ```
+ For each file, the access and analysis over sheet content, structure and design have been into account to specify the work zone as a dataframe.
+ `for xl_file in folder.list_f`
 
-    - [x] `first = spark_dataframe(path_origin=xl_file, path_export="./pyspark/")`
-    - [x] `first.remove_nan()`
-    - [x] `first.remove_comments()`
-    - [x] `first.remove_empty_column()`
-    - [x] `first.Establishing_header()`
-    - [x] `first.export_to_csv()`
+ - [x] `first = spark_dataframe(path_origin=xl_file, path_export="./pyspark/")`
+ - [x] `first.remove_nan()`
+ - [x] `first.remove_comments()`
+ - [x] `first.remove_empty_column()`
+ - [x] `first.Establishing_header()`
+ - [x] `first.export_to_csv()`
 
-   - **Outcome** [CSV dataset](https://github.com/caeltarifa/process_distributed_data/tree/main/dataset_censo_agropecuario/outcome/xldr_numpy)
+- **Outcome** [CSV dataset](https://github.com/caeltarifa/process_distributed_data/tree/main/dataset_censo_agropecuario/outcome/pyspark)
 
-      |  Preliminar Dataframe |  Extracting Data|
-      |:-------------------------:|:-------------------------:|
-      |  ![Preliminar Dataframe](https://user-images.githubusercontent.com/23003922/210667833-c9ec4a11-65d8-46b4-a015-a14af9308402.png)| ![Extracting Data](https://user-images.githubusercontent.com/23003922/210667863-8d18a875-901b-49d0-a2f3-1f9d3e2ee7a7.png) |
+   |  Preliminar Dataframe |  Extracting Data|
+   |:-------------------------:|:-------------------------:|
+   |  ![Preliminar Dataframe](https://user-images.githubusercontent.com/23003922/210667833-c9ec4a11-65d8-46b4-a015-a14af9308402.png)| ![Extracting Data](https://user-images.githubusercontent.com/23003922/210667863-8d18a875-901b-49d0-a2f3-1f9d3e2ee7a7.png) |
+    </p>
 
-  </p>
-
-</details>
+  </details>
   
+
   
 
 <!--
@@ -119,24 +122,30 @@ In a perfect world, data is clean, structured, and all in one place. That’s ev
 
 
 ## References
-> Polar 
-*   [Getting Started with the Polars DataFrame Library](https://towardsdatascience.com/getting-started-with-the-polars-dataframe-library-6f9e1c014c5c)
-*   [Handling dataframe](https://pola-rs.github.io/polars/py-polars/html/reference/dataframe/index.html)
-*   [Read_excel](https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.read_excel.html)
-*   [Polars DataFrame library: from Numpy and from Pandas](https://pola-rs.github.io/polars-book/user-guide/introduction.html)
+#### Polar 
+   *   [Getting Started with the Polars DataFrame Library](https://towardsdatascience.com/getting-started-with-the-polars-dataframe-library-6f9e1c014c5c)
+   *   [Handling dataframe](https://pola-rs.github.io/polars/py-polars/html/reference/dataframe/index.html)
+   *   [Read_excel](https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.read_excel.html)
+   *   [Polars DataFrame library: from Numpy and from Pandas](https://pola-rs.github.io/polars-book/user-guide/introduction.html)
 
-> NumPy 
-*   [Normalization & Multidimensional Arrays](https://numpy.org/doc/stable/reference/index.html)
+#### NumPy 
+   *   [Normalization & Multidimensional Arrays](https://numpy.org/doc/stable/reference/index.html)
 
-> Pandas 
-*   [How to Convert NumPy Array to Pandas DataFrame](https://datatofish.com/numpy-array-to-pandas-dataframe/)
-*   [Data wrangling with Pandas](https://exeter-data-analytics.github.io/python-data/pandas.html)
+#### Pandas 
+   *   [How to Convert NumPy Array to Pandas DataFrame](https://datatofish.com/numpy-array-to-pandas-dataframe/)
+   *   [Data wrangling with Pandas](https://exeter-data-analytics.github.io/python-data/pandas.html)
+   *   [Pandas DataFrame Tutorial with Examples](https://sparkbyexamples.com/pandas/pandas-dataframe-tutorial-beginners-guide/)
 
-> Xlrd
-*   [[Chapter 4] Data Wrangling with Python by Jacqueline Kazil, Katharine Jarmul](https://demo.mobilepit.com/pub/book/DataScience/Data%20Wrangling%20with%20Python.pdf)
-*   [Scraping Excel Data with Python](https://medium.com/@tanyashapiro_72192/scraping-excel-data-with-python-41725308d9b0)
+#### Xlrd
+   *   [[Chapter 4] Data Wrangling with Python by Jacqueline Kazil, Katharine Jarmul](https://demo.mobilepit.com/pub/book/DataScience/Data%20Wrangling%20with%20Python.pdf)
+   *   [Scraping Excel Data with Python](https://medium.com/@tanyashapiro_72192/scraping-excel-data-with-python-41725308d9b0)
 
-> Data wrangling: Fundamentals & best practices 
-*   [Data Wrangling with Python by Jacqueline Kazil, Katharine Jarmul](https://demo.mobilepit.com/pub/book/DataScience/Data%20Wrangling%20with%20Python.pdf)
-*   [All You Need to Know About Data Wrangling and Importing CSV in Python](https://www.turing.com/kb/data-wrangling-and-importing-csv-in-python)
-*   [Master Data Wrangling First: Top 20 Python Libraries + Best Practices](https://pub.towardsai.net/master-data-wrangling-first-top-20-python-libraries-15-best-practices-a07ac7a26efd)
+#### Data wrangling: Fundamentals & best practices 
+   *   [Data Wrangling with Python by Jacqueline Kazil, Katharine Jarmul](https://demo.mobilepit.com/pub/book/DataScience/Data%20Wrangling%20with%20Python.pdf)
+   *   [All You Need to Know About Data Wrangling and Importing CSV in Python](https://www.turing.com/kb/data-wrangling-and-importing-csv-in-python)
+   *   [Master Data Wrangling First: Top 20 Python Libraries + Best Practices](https://pub.towardsai.net/master-data-wrangling-first-top-20-python-libraries-15-best-practices-a07ac7a26efd)
+  
+#### PySpark
+   *   [From/to pandas and PySpark DataFrames](https://spark.apache.org/docs/latest/api/python/user_guide/pandas_on_spark/pandas_pyspark.html)
+   *   [Read Messy Excel Files Like a Pro](https://towardsdatascience.com/read-messy-excel-files-like-a-pro-27880306ad0b)
+   *   [Data Analysis with Python and PySpark by Jonathan Rioux](https://www.amazon.com/-/es/Jonathan-Rioux/dp/1617297208/ref=d_pd_sbs_sccl_2_4/139-7860564-7444143?pd_rd_w=zvaIj&content-id=amzn1.sym.3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_p=3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_r=AMF4PB5NGSFX57CAMQAK&pd_rd_wg=3dQGp&pd_rd_r=3790b83d-8c19-47bd-a68f-30347f6dd112&pd_rd_i=1617297208&psc=1)
