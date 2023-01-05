@@ -78,6 +78,7 @@ This way was built using [PySpark Jupyter notebook](https://github.com/caeltarif
     pandas==1.3.5
     numpy==1.21.6
     pyspar==3.3.1
+    findspark==2.0.1
     ```
 - **Datapipeline**
 Main class or how to instance "wrangling procceses".
@@ -149,3 +150,5 @@ Reading Excel files by FileReader Class where it requires files' folder to be pr
    *   [From/to pandas and PySpark DataFrames](https://spark.apache.org/docs/latest/api/python/user_guide/pandas_on_spark/pandas_pyspark.html)
    *   [Read Messy Excel Files Like a Pro](https://towardsdatascience.com/read-messy-excel-files-like-a-pro-27880306ad0b)
    *   [Data Analysis with Python and PySpark by Jonathan Rioux](https://www.amazon.com/-/es/Jonathan-Rioux/dp/1617297208/ref=d_pd_sbs_sccl_2_4/139-7860564-7444143?pd_rd_w=zvaIj&content-id=amzn1.sym.3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_p=3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_r=AMF4PB5NGSFX57CAMQAK&pd_rd_wg=3dQGp&pd_rd_r=3790b83d-8c19-47bd-a68f-30347f6dd112&pd_rd_i=1617297208&psc=1)
+   *   [The Most Complete Guide to pySpark DataFrames](https://towardsdatascience.com/the-most-complete-guide-to-pyspark-dataframes-2702c343b2e8#728b)
+   *   [pyspark.sql.DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.html?highlight=pyspark%20dataframe#pyspark.sql.DataFrame)
