@@ -3,8 +3,8 @@
 This bash script converts PDF files to JPEG images and performs OCR on the images to extract text from them.
 
 ## Requirements
-Ghostscript
-Tesseract OCR
+- Ghostscript
+- Tesseract OCR
 
 ## Usage
 Clone the repository and navigate to the directory containing the script.
