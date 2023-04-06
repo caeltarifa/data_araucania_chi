@@ -9,7 +9,7 @@ This bash script converts PDF files to JPEG images and performs OCR on the image
 ## Usage
 Clone the repository and navigate to the directory containing the script.
 Modify the directory variable in the script to specify the location of the PDF files to be converted.
-Execute the script in the terminal using the command ./pdf_to_img_and_ocr.sh.
+Execute the script in the terminal using the command ./ocr_extract.sh.
 
 ## Steps
 Convert PDF files to JPEG images using Ghostscript.
